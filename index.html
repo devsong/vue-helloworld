@@ -1,127 +1,31 @@
 <!DOCTYPE html>
+
+<head>
+    <title>首页</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+
 <body>
-    <div id="app">
-        {{ message }}
+    <div id="container">
+        <!-- <div class="nav-tab">
+            <ul>
+                <li><a href="http://www.elong.com" target="mainFrame">艺龙</a></li>
+                <li><a href="http://www.ctrip.com" target="mainFrame">携程</a></li>
+                <li><a href="http://www.baidu.com" target="mainFrame">飞猪</a></li>
+            </ul>
+        </div> -->
+        
+        <div class="main">
+            <!-- <img src="img/gg.jpg" /> -->
+            <a id="btnBubble">事件冒泡</a>
+            <a id="btnCapture">事件捕获</a>
+        </div>
     </div>
 
-    <div id="app-2">
-        <span v-bind:title="message">
-            second
-        </span>
-    </div>
-
-    <div id="app-3">
-        <p v-if="seen">现在你看到我了</p>
-    </div>
-
-    <div id="app-4">
-        <p v-on:click="app4Click">点击事件</p>
-    </div>
-
-    <div id="app-5">
-        <span>循环指令</span>
-        <ol>
-            <li v-for="todo in todos" style="list-style: disc;">
-                {{todo.text}}
-            </li>
-        </ol>
-    </div>
-
-    <div id="app-6">
-        <span>组件化</span>
-        <ol>
-            <todo-item v-for="item in programLanguages" v-bind:todo="item" v-bind:key="item.id">
-            </todo-item>
-        </ol>
-    </div>
-
-    <script src="./node_modules/vue/dist/vue.js"></script>
-    <script>
-        Vue.component('todo-item', {
-            props: ['todo'],
-            template: '<li>{{todo.text}}</li>'
-        });
-
-        var app = new Vue({
-            el: '#app',
-            data: {
-                message: 'Hello Vue'
-            }
-        });
-
-        var app2 = new Vue({
-            el: '#app-2',
-            data: {
-                message: 'Hello Vue'
-            }
-        });
-
-        var app3 = new Vue({
-            el: '#app-3',
-            data: {
-                seen: true
-            }
-        });
-
-        var app4 = new Vue({
-            el: '#app-4',
-            data: {
-                seen: true
-            },
-            methods: {
-                'app4Click': function () {
-                    alert('clicked');
-                }
-            }
-        });
-
-        var app5 = new Vue({
-            el: '#app-5',
-            data: {
-                todos: [{
-                        text: 'C'
-                    },
-                    {
-                        text: 'C++'
-                    },
-                    {
-                        text: 'Java'
-                    },
-                    {
-                        text: 'C#'
-                    },
-                ]
-            },
-            methods: {
-                'app4Click': function () {
-                    alert('clicked');
-                }
-            }
-        });
-
-        var app6 = new Vue({
-            el: '#app-6',
-            data: {
-                programLanguages: [{
-                        id: 0,
-                        text: 'C'
-                    },
-                    {
-                        id: 1,
-                        text: 'C++'
-                    },
-                    {
-                        id: 2,
-                        text: 'Java'
-                    },
-                    {
-                        id: 2,
-                        text: 'C#'
-                    }
-                ]
-            }
-        })
-    </script>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
